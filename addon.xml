@@ -1,0 +1,35 @@
+<?xml version="1.0" encoding="UTF-8" standalone="yes"?>
+<addon id="context.music-tags-extractor"
+	   name="Music tags extractor"
+	   version="0.0.1"
+	   provider-name="linuxwhatelse">
+
+	<requires>
+		<import addon="xbmc.python" version="2.20.0"/>
+		<import addon="script.module.mutagen" version="1.22.0"/>
+	</requires>
+
+    <extension point="kodi.context.item" library="context.py">
+        <item>
+            <label>30000</label>
+            <visible>!IsEmpty(ListItem.TrackNumber)</visible>
+            <!--<visible>!IsEmpty(ListItem.Artist) | !IsEmpty(ListItem.Album) | !IsEmpty(ListItem.TrackNumber)</visible>-->
+        </item>
+    </extension>
+
+	<extension point="xbmc.addon.metadata">
+		<license>GNU GENERAL PUBLIC LICENSE Version 3, 29 June 2007</license>
+		<platform>all</platform>
+		<summary lang="en">Music tags extractor</summary>
+		<description lang="en">
+Allows to extract tags of your music collection to help "Team Kodi"
+debug music related problems.
+
+Usage:
+ 1. Navigate to a song
+ 2. Open the context menu ("c" key on your keyboard)
+ 3. Select "Extract Tags"
+ 4. Choose a directory to extract the tags to
+		</description>
+	</extension>
+</addon>
