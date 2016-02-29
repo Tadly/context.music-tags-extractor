@@ -73,7 +73,8 @@ def extract_metadata(files):
                 f.write('================\n')
                 for key, value in easy_tags.iteritems():
                     if isinstance(value, list):
-                        f.write('%s: %s\n' % (key, value[0]))
+                        for v in value:
+                            f.write('%s: %s\n' % (key, v))
                     else:
                         f.write('%s: %s\n' % (key, value))
 
@@ -83,7 +84,8 @@ def extract_metadata(files):
                 f.write('=============\n')
                 for key, value in orig_tags.iteritems():
                     if isinstance(value, list):
-                        f.write('%s: %s\n' % (key, value[0]))
+                        for v in value:
+                            f.write('%s: %s\n' % (key, v))
                     else:
                         f.write('%s: %s\n' % (key, value))
 
