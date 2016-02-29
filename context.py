@@ -63,7 +63,7 @@ def extract_metadata(files):
                     f.write(xbmcvfs.File(_file).read())
 
         filename = os.path.basename(file_path)
-        meta_filename = os.path.splitext(filename)[0] + '.meta'
+        meta_filename = os.path.splitext(filename)[0] + '.txt'
         try:
             easy_tags = mutagen.File(file_path, easy=True).tags
             orig_tags = mutagen.File(file_path, easy=False).tags
