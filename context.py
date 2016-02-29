@@ -71,7 +71,7 @@ def extract_metadata(files):
             with open(os.path.join(target_dir, meta_filename), 'w+') as f:
                 f.write('Mutagen EasyTags\n')
                 f.write('================\n')
-                for key, value in easy_tags.iteritems():
+                for key, value in sorted(easy_tags.iteritems()):
                     if isinstance(value, list):
                         for v in value:
                             f.write('%s: %s\n' % (key, v))
@@ -82,7 +82,7 @@ def extract_metadata(files):
 
                 f.write('Original Tags\n')
                 f.write('=============\n')
-                for key, value in orig_tags.iteritems():
+                for key, value in sorted(orig_tags.iteritems()):
                     if isinstance(value, list):
                         for v in value:
                             f.write('%s: %s\n' % (key, v))
