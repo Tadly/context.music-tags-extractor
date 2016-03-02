@@ -12,10 +12,11 @@ from mutagen.easyid3 import EasyID3
 _addon = xbmcaddon.Addon()
 
 def _execute_jsonrpc(method, params=None):
-    data = {}
-    data['id']         = 1
-    data['jsonrpc']    = '2.0'
-    data['method']     = method
+    data = {
+        'id'      : 1,
+        'jsonrpc' : '2.0',
+        'method'  : method
+    }
 
     if params:
         data['params'] = params
